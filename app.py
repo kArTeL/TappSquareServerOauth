@@ -38,8 +38,8 @@ def authorize():
 def callback():
 
   # Extract the returned authorization code from the URL
-  return request.query_string;
-  authorization_code = request.query.get('code')
+  return request.args.get('code');
+  authorization_code = request.args.get('code')
   if authorization_code:
 
     # Provide the code in a request to the Obtain Token endpoint
