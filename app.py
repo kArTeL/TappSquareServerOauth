@@ -12,7 +12,7 @@
 #    to the Connect API.
 from flask import Flask
 from bottle import get, request, static_file, run
-import httplib.client, json
+import http.client, json
 app = Flask(__name__)
 
 # Your application's ID and secret, available from your application dashboard.
@@ -46,7 +46,7 @@ def callback():
       'client_secret': application_secret,
       'code': authorization_code
     }
-    connection = httplib.client.HTTPSConnection('connect.squareup.com')
+    connection = http.client.HTTPSConnection('connect.squareup.com')
     connection.request('POST', '/oauth2/token', json.dumps(oauth_request_body), oauth_request_headers)
 
     # Extract the returned access token from the response body
@@ -59,7 +59,8 @@ def callback():
           # to authorize the application.'''.format(application_id)
       # print 'Access token: ' + oauth_response_body['access_token']
       #return 'Authorization succeeded!'
-      print( "Location: tappsquare://token.com?token=" + oauth_response_body['access_token']); 
+      #print( "Location: tappsquare://token.com?token=" + oauth_response_body['access_token']); 
+      print(( "Location: tappsquare://token.com?token=" + oauth_response_body['access_token']));
       #print "Location: tappsquare://token.com?token=" + {};
       
 
