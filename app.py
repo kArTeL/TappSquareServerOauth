@@ -25,7 +25,7 @@ oauth_request_headers = { 'Authorization': 'Client ' + application_secret,
                           'Content-Type': 'application/json'}
 
 # Serves the link that merchants click to authorize your application
-@get('/')
+@app.route('/')
 def authorize():
   return '''<a href="https://connect.squareup.com/oauth2/authorize?client_id={0}">Click here</a>
             to authorize the application.'''.format(application_id)
@@ -33,7 +33,8 @@ def authorize():
 # Serves requsts from Square to your application's redirect URL
 # Note that you need to set your application's Redirect URL to
 # http://localhost:8080/callback from your application dashboard
-@get('/callback')
+#@get('/callback')
+@app.route('/callback')
 def callback():
 
   # Extract the returned authorization code from the URL
