@@ -59,7 +59,7 @@ def callback():
           # to authorize the application.'''.format(application_id)
       # print 'Access token: ' + oauth_response_body['access_token']
       #return 'Authorization succeeded!'
-      print( "Location: tappsquare://token.com?token=" + oauth_response_body['access_token'); 
+      print( "Location: tappsquare://token.com?token=" + oauth_response_body['access_token']); 
       #print "Location: tappsquare://token.com?token=" + {};
       
 
