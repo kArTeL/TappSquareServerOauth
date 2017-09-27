@@ -38,6 +38,7 @@ def authorize():
 def callback():
 
   # Extract the returned authorization code from the URL
+  print(request.query_string);
   authorization_code = request.query.get('code')
   if authorization_code:
 
