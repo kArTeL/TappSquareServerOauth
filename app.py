@@ -10,9 +10,10 @@
 #    along to the Obtain Token endpoint.
 # 5. The Obtain Token endpoint returns an access token your application can use in subsequent requests
 #    to the Connect API.
-
+from flask import Flask
 from bottle import get, request, static_file, run
 import httplib, json
+app = Flask(__name__)
 
 # Your application's ID and secret, available from your application dashboard.
 application_id = 'sq0idp-bAHi1yTdB2xO5Hu6DbJFIA'
