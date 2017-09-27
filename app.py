@@ -55,8 +55,13 @@ def callback():
 
       # Here, instead of printing the access token, your application server should store it securely
       # and use it in subsequent requests to the Connect API on behalf of the merchant.
-      print 'Access token: ' + oauth_response_body['access_token']
-      return 'Authorization succeeded!'
+      #return '''<a href="tappsquare://squaretoken.com?token={0}">Click here</a>
+          # to authorize the application.'''.format(application_id)
+      # print 'Access token: ' + oauth_response_body['access_token']
+      #return 'Authorization succeeded!'
+      print( "Location: tappsquare://token.com?token=" + oauth_response_body['access_token'); 
+      #print "Location: tappsquare://token.com?token=" + {};
+      
 
     # The response from the Obtain Token endpoint did not include an access token. Something went wrong.
     else:
