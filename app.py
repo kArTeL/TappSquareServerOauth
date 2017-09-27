@@ -62,7 +62,8 @@ def callback():
       # print 'Access token: ' + oauth_response_body['access_token']
       #return 'Authorization succeeded!'
       #print( "Location: tappsquare://token.com?token=" + oauth_response_body['access_token']); 
-      print(( "Location: tappsquare://token.com?token=" + oauth_response_body['access_token']));
+      return oauth_response_body['access_token'];
+      #print(( "Location: tappsquare://token.com?token=" + oauth_response_body['access_token']));
       #print "Location: tappsquare://token.com?token=" + {};
       
 
