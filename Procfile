@@ -1,1 +1,1 @@
-web: python OAuth.py
+web: gunicorn OAuth --log-file=-
