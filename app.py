@@ -66,4 +66,6 @@ def callback():
     return 'Authorization failed!'
 
 # Start up the server
-run(host='localhost', port=8080)
+if __name__ == '__main__':
+    app.run(debug=True, use_reloader=True)
+#run(host='localhost', port=8080)
