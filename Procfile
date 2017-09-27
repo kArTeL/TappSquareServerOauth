@@ -1,1 +1,1 @@
-web: gunicorn OAuth --log-file=-
+web: gunicorn app:app --log-file=-
