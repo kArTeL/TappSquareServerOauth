@@ -27,7 +27,7 @@ oauth_request_headers = { 'Authorization': 'Client ' + application_secret,
 # Serves the link that merchants click to authorize your application
 @app.route('/')
 def authorize():
-  return '''<a href="https://connect.squareup.com/oauth2/authorize?client_id={0}">Click here</a>
+  return '''<a href="https://connect.squareup.com/oauth2/authorize?client_id={0}&scope=PAYMENTS_WRITE%20PAYMENTS_READ%20ITEMS_READ%20ORDERS_READ%20TIMECARDS_READ">Click here</a>
             to authorize the application.'''.format(application_id)
 
 # Serves requsts from Square to your application's redirect URL
@@ -46,7 +46,8 @@ def callback():
     oauth_request_body = {
       'client_id': application_id,
       'client_secret': application_secret,
-      'code': authorization_code
+      'code': authorization_code,
+      'redirect_uri':'https://boiling-peak-36818.herokuapp.com/callback'
     }
     connection = http.client.HTTPSConnection('connect.squareup.com')
     connection.request('POST', '/oauth2/token', json.dumps(oauth_request_body), oauth_request_headers)
