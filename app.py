@@ -13,6 +13,7 @@
 from flask import Flask, request
 from bottle import get, static_file, run
 import http.client, json
+import requests
 app = Flask(__name__)
 
 # Your application's ID and secret, available from your application dashboard.
@@ -34,8 +35,17 @@ oauth_request_headers = { 'Authorization': 'Client ' + application_secret,
 def authorize():
   # return '''<a href="https://connect.squareup.com/oauth2/authorize?client_id={0}&scope=PAYMENTS_WRITE%20PAYMENTS_READ%20ITEMS_READ%20ORDERS_READ%20TIMECARDS_READ%20ORDERS_WRITE">Click here</a>
   #           to authorize the application.'''.format(application_id)
-  return '''<a href="https://connect.squareup.com/oauth2/authorize?client_id={0}&scope=PAYMENTS_WRITE%20PAYMENTS_READ%20ITEMS_READ%20ORDERS_READ%20TIMECARDS_READ%20ORDERS_WRITE%20PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS%20EMPLOYEES_WRITE">Click here</a>
+  return '''<a href="https://connect.squareup.com/oauth2/authorize?client_id={0}&scope=MERCHANT_PROFILE_READ%20SETTLEMENTS_READ%20PAYMENTS_WRITE%20PAYMENTS_READ%20ITEMS_READ%20ORDERS_READ%20TIMECARDS_READ%20ORDERS_WRITE%20PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS%20EMPLOYEES_WRITE">Click here</a>
             to authorize the application.'''.format(application_id)
+
+
+# @app.route('authorization')
+# def authorize():
+#   # return '''<a href="https://connect.squareup.com/oauth2/authorize?client_id={0}&scope=PAYMENTS_WRITE%20PAYMENTS_READ%20ITEMS_READ%20ORDERS_READ%20TIMECARDS_READ%20ORDERS_WRITE">Click here</a>
+#   #           to authorize the application.'''.format(application_id)
+#   return '''<a href="https://connect.squareup.com/oauth2/authorize?client_id={0}&scope=PAYMENTS_WRITE%20PAYMENTS_READ%20ITEMS_READ%20ORDERS_READ%20TIMECARDS_READ%20ORDERS_WRITE%20PAYMENTS_WRITE_ADDITIONAL_RECIPIENTS%20EMPLOYEES_WRITE">Click here</a>
+#             to authorize the application.'''.format(application_id)
+
 
 # Serves requsts from Square to your application's redirect URL
 # Note that you need to set your application's Redirect URL to
