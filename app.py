@@ -13,7 +13,6 @@
 from flask import Flask, request
 from bottle import get, static_file, run
 import http.client, json
-import requests
 app = Flask(__name__)
 
 # Your application's ID and secret, available from your application dashboard.
