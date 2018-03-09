@@ -16,8 +16,13 @@ import http.client, json
 app = Flask(__name__)
 
 # Your application's ID and secret, available from your application dashboard.
-application_id = 'sq0idp-bAHi1yTdB2xO5Hu6DbJFIA'
-application_secret = 'sq0csp-S5CnHqAcvV6Nm4sLuOxI3sF36tnH8QwrILR1Vl0QOVk'
+# application_id = 'sq0idp-bAHi1yTdB2xO5Hu6DbJFIA'
+# application_secret = 'sq0csp-S5CnHqAcvV6Nm4sLuOxI3sF36tnH8QwrILR1Vl0QOVk'
+
+application_id = 'sq0idp-jIC-SZibUADmo2L1gLk03A'
+application_secret = 'sq0csp-9E5UxkFwGvzf01GrFtEU3TFZqL1TLOq5vzNHLBTL6lE'
+
+
 
 # Headers to provide to OAuth API endpoints
 oauth_request_headers = { 'Authorization': 'Client ' + application_secret,
